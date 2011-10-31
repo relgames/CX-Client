@@ -3,13 +3,14 @@
       package="org.relgames.cxclient"
       android:versionCode="1"
       android:versionName="1.0">
-    <application android:label="@string/app.name" >
+    <application android:label="@string/app.id" >
         <activity android:name="UserInfo"
-                  android:label="@string/user.info">
+                  android:label="@string/app.name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest> 

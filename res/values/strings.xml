@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app.name">cxclient</string>
+    <string name="app.id">cxclient</string>
+    <string name="app.name">Клиент для Схватки</string>
     <string name="user.info">Информация о пользователе</string>
     <string name="hello">Привет</string>
 </resources>
