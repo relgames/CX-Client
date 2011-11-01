@@ -3,9 +3,12 @@
       package="org.relgames.cxclient"
       android:versionCode="1"
       android:versionName="1.0">
-    <application android:label="@string/app.id" >
+
+    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="7" />
+
+    <application  android:name=".CxApplication" android:label="@string/app.id" android:icon="@drawable/ic_launcher">
         <activity android:name="UserInfo"
-                  android:label="@string/app.name">
+                  android:label="@string/user.info">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

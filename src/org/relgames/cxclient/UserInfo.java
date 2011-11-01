@@ -7,19 +7,16 @@ import org.relgames.cxclient.service.CxService;
 import org.relgames.cxclient.service.User;
 
 public class UserInfo extends Activity {
-    /**
-     * Called when the activity is first created.
-     */
-
-    private CxService cxService;
+    private CxService getCxService() {
+        return ((CxApplication)getApplication()).getCxService();
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.user_info);
 
-        cxService = new CxService();
-        User user = cxService.getUserInfo();
+        User user = getCxService().getUserInfo();
 
         TextView userId = (TextView) findViewById(R.id.userId);
         userId.setText(user.id);
