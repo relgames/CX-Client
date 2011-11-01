@@ -18,11 +18,10 @@ public class UserInfo extends Activity {
 
         User user = getCxService().getUserInfo();
 
-        TextView userId = (TextView) findViewById(R.id.userId);
-        userId.setText(user.id);
-
-        TextView userName = (TextView) findViewById(R.id.userName);
-        userName.setText(user.name);
+        ((TextView)findViewById(R.id.userId)).setText(user.id);
+        ((TextView)findViewById(R.id.userName)).setText(user.name);
+        ((TextView)findViewById(R.id.email)).setText(user.email);
+        ((TextView)findViewById(R.id.team)).setText(user.team!=null ? user.team.name : "");
     }
 
 }

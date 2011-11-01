@@ -3,5 +3,8 @@
     <string name="app.id">cxclient</string>
     <string name="app.name">Клиент для Схватки</string>
     <string name="user.info">Информация о пользователе</string>
-    <string name="hello">Привет</string>
+    <string name="user.info.id"><b>ID</b></string>
+    <string name="user.info.name"><b>Имя</b></string>
+    <string name="user.info.email"><b>Email</b></string>
+    <string name="user.info.team"><b>Команда</b></string>
 </resources>
