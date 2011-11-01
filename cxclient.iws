@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cb9ccee-18d7-451f-82a8-201705457ed4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxServiceException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/service/Team.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/org/relgames/cxclient/service/ParsingTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cxclient.iml" afterPath="$PROJECT_DIR$/cxclient.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cxclient.ipr" afterPath="$PROJECT_DIR$/cxclient.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cxclient.iws" afterPath="$PROJECT_DIR$/cxclient.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/relgames/cxclient/UserInfo.java" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/UserInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxService.java" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/relgames/cxclient/service/User.java" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/service/User.java" />
     </list>
     <ignored path="cxclient.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -574,7 +563,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="24" width="1680" height="1002" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -600,8 +589,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <value>
         <are-packages-shown value="false" />
