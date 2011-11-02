@@ -12,10 +12,16 @@
     <string name="game.info.type">Тип</string>
     <string name="game.info.zone">Зона</string>
 
-
     <string name="user.info">Информация о пользователе</string>
     <string name="user.info.id">ID</string>
     <string name="user.info.name">Имя</string>
     <string name="user.info.email">Email</string>
     <string name="user.info.team">Команда</string>
+
+    <string name="app.refresh">Обновить</string>
+
+    <string name="app.settings">Параметры</string>
+    <string name="app.settings.username">Имя пользователя</string>
+    <string name="app.settings.password">Пароль</string>
+    <string name="app.settings.url">URL</string>
 </resources>

@@ -3,6 +3,7 @@ package org.relgames.cxclient;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
+import org.relgames.cxclient.service.CxApplication;
 import org.relgames.cxclient.service.CxService;
 import org.relgames.cxclient.service.User;
 
