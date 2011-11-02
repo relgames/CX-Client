@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cb9ccee-18d7-451f-82a8-201705457ed4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/ic_menu_preferences.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/ic_menu_refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/menu/main_menu.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/xml/preferences.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/SettingsActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxApplication.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/relgames/cxclient/CxApplication.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/ic_menu_info_details.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/Utils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cxclient.iws" afterPath="$PROJECT_DIR$/cxclient.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/main_menu.xml" afterPath="$PROJECT_DIR$/res/menu/main_menu.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/relgames/cxclient/GameListActivity.java" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/GameListActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/relgames/cxclient/UserInfoActivity.java" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/UserInfoActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxService.java" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxApplication.java" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxServiceException.java" afterPath="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxServiceException.java" />
     </list>
     <ignored path="cxclient.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,13 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameListActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GameListActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/GameListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="56" selection-start="1316" selection-end="1316" vertical-scroll-proportion="0.34042552">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="13" column="30" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,7 +90,7 @@
       <file leaf-file-name="CxApplication.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/service/CxApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="48" selection-start="2012" selection-end="2015" vertical-scroll-proportion="0.0">
+            <state line="85" column="62" selection-start="2936" selection-end="2936" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -105,7 +99,7 @@
       <file leaf-file-name="main_menu.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/menu/main_menu.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
+            <state line="1" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -114,8 +108,21 @@
       <file leaf-file-name="UserInfoActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/UserInfoActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="37" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="28" column="30" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.26595744">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,7 +139,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="39" selection-start="836" selection-end="836" vertical-scroll-proportion="0.0">
+            <state line="27" column="57" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -152,8 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/org/relgames/cxclient/service/ParsingTest.java" />
-        <option value="$PROJECT_DIR$/src/org/relgames/cxclient/service/Game.java" />
         <option value="$PROJECT_DIR$/src/org/relgames/cxclient/GameInfoActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/game_info.xml" />
         <option value="$PROJECT_DIR$/res/layout/user_info.xml" />
@@ -161,13 +166,15 @@
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/xml/preferences.xml" />
         <option value="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxService.java" />
-        <option value="$PROJECT_DIR$/src/org/relgames/cxclient/UserInfoActivity.java" />
         <option value="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/org/relgames/cxclient/CxApplication.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/menu/main_menu.xml" />
-        <option value="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxApplication.java" />
+        <option value="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxServiceException.java" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/org/relgames/cxclient/GameListActivity.java" />
+        <option value="$PROJECT_DIR$/src/org/relgames/cxclient/UserInfoActivity.java" />
+        <option value="$PROJECT_DIR$/src/org/relgames/cxclient/service/CxApplication.java" />
+        <option value="$PROJECT_DIR$/src/org/relgames/cxclient/Utils.java" />
       </list>
     </option>
   </component>
@@ -846,7 +853,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="cosmetic changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="preferences" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -864,6 +871,7 @@
     <MESSAGE value="UserInfo cosmetic changes" />
     <MESSAGE value="Game info activity" />
     <MESSAGE value="cosmetic changes" />
+    <MESSAGE value="preferences" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -873,18 +881,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gen/org/relgames/cxclient/R.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="15" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/GameInfoActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="94" selection-start="957" selection-end="957" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/service/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="18" selection-start="642" selection-end="642" vertical-scroll-proportion="0.0">
@@ -936,27 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/service/CxService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="22" selection-start="234" selection-end="234" vertical-scroll-proportion="0.29945552">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/UserInfoActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="37" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="39" selection-start="836" selection-end="836" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/preferences.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="116" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0">
@@ -966,21 +941,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/menu/main_menu.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
+        <state line="1" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/service/CxApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/service/CxServiceException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="48" selection-start="2012" selection-end="2015" vertical-scroll-proportion="0.0">
+        <state line="5" column="40" selection-start="113" selection-end="113" vertical-scroll-proportion="0.15856236">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/service/CxService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="40" selection-start="166" selection-end="166" vertical-scroll-proportion="0.24390244">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="57" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/GameListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="56" selection-start="1316" selection-end="1316" vertical-scroll-proportion="0.34042552">
+        <state line="13" column="30" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/UserInfoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="30" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/service/CxApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="62" selection-start="2936" selection-end="2936" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/relgames/cxclient/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.26595744">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

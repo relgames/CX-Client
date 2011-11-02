@@ -28,7 +28,7 @@ public class CxApplication extends Application implements CxService {
 
     private Persister persister = new Persister();
 
-    private static final String TAG = "CxService";
+    private static final String TAG_SERVICE = "CxService";
 
     private static class RemoteService {
         public String url;
@@ -41,7 +41,7 @@ public class CxApplication extends Application implements CxService {
     }
 
     private static final Map<Class, RemoteService> SERVICES = Collections.unmodifiableMap(new HashMap<Class, RemoteService>() {{
-        put(User.class, new RemoteService("RemoteService", false));
+        put(User.class, new RemoteService("mvc/user/me", true));
         put(GameList.class, new RemoteService("mvc/games/open", false));
     }});
 
@@ -55,7 +55,7 @@ public class CxApplication extends Application implements CxService {
         return getDataFromServer(GameList.class, null).games;
     }
 
-    private <T> T getDataFromServer(Class<T> clazz, Map<String, String> parameters) {
+    private <T> T getDataFromServer(Class<T> clazz, Map<String, String> parameters) throws CxServiceException {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         final String username = sp.getString("username", "");
         final String password = sp.getString("password", "");
@@ -77,13 +77,13 @@ public class CxApplication extends Application implements CxService {
 
             appendParameters(url, fullParameters);
 
-            Log.d(TAG, url.toString());
+            Log.d(TAG_SERVICE, url.toString());
             String result = get(url.toString());
-            Log.d(TAG, result);
+            Log.d(TAG_SERVICE, result);
 
             return persister.read(clazz, result, false);
         } catch (Exception e) {
-            throw new CxServiceException("Can't get user info", e);
+            throw new CxServiceException("Communication error: " + e.getLocalizedMessage(), e);
         }
     }
 
