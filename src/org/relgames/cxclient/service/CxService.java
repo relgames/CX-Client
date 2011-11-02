@@ -55,7 +55,7 @@ public class CxService {
             String result = get(url.toString());
             Log.d(TAG, result);
 
-            return persister.read(clazz, result);
+            return persister.read(clazz, result, false);
         } catch (Exception e) {
             throw new CxServiceException("Can't get user info", e);
         }

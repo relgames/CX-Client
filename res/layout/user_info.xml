@@ -5,88 +5,21 @@
         android:orientation="vertical"
         xmlns:android="http://schemas.android.com/apk/res/android"
         >
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/user.info.id"
-            >
-    </TextView>
-    <TextView
-            android:id="@+id/userId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-    </TextView>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/user.info.id" android:paddingLeft="8dp" android:textStyle="bold"/>
+    <TextView android:id="@+id/userId" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="8dp"/>
 
-    <ImageView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:src="@android:drawable/divider_horizontal_dark"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="2dp"
-            android:paddingTop="2dp"/>
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android" android:src="@android:drawable/divider_horizontal_dark" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:paddingBottom="2dp" android:paddingTop="2dp"/>
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/user.info.name"
-            >
-    </TextView>
-    <TextView
-            android:id="@+id/userName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-    </TextView>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/user.info.name" android:paddingLeft="8dp" android:textStyle="bold"/>
+    <TextView android:id="@+id/userName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="8dp"/>
 
-    <ImageView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:src="@android:drawable/divider_horizontal_dark"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="2dp"
-            android:paddingTop="2dp"/>
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android" android:src="@android:drawable/divider_horizontal_dark" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:paddingBottom="2dp" android:paddingTop="2dp"/>
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/user.info.email"
-            >
-    </TextView>
-    <TextView
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-    </TextView>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/user.info.email" android:paddingLeft="8dp" android:textStyle="bold"/>
+    <TextView android:id="@+id/email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="8dp"/>
 
-    <ImageView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:src="@android:drawable/divider_horizontal_dark"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="2dp"
-            android:paddingTop="2dp"/>
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android" android:src="@android:drawable/divider_horizontal_dark" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="fitXY" android:paddingBottom="2dp" android:paddingTop="2dp"/>
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/user.info.team"
-            >
-    </TextView>
-    <TextView
-            android:id="@+id/team"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-    </TextView>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/user.info.team" android:paddingLeft="8dp" android:textStyle="bold"/>
+    <TextView android:id="@+id/team" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="8dp"/>
 </LinearLayout>

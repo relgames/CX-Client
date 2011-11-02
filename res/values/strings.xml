@@ -4,18 +4,18 @@
     <string name="app.name">Схватка</string>
 
     <string name="game.info">Игра</string>
-    <string name="game.info.dateStart"><b>Начало</b></string>
-    <string name="game.info.dateStop"><b>Конец</b></string>
-    <string name="game.info.name"><b>Название</b></string>
-    <string name="game.info.number"><b>Номер</b></string>
-    <string name="game.info.price"><b>Цена</b></string>
-    <string name="game.info.type"><b>Тип</b></string>
-    <string name="game.info.zone"><b>Зона</b></string>
+    <string name="game.info.dateStart">Начало</string>
+    <string name="game.info.dateStop">Конец</string>
+    <string name="game.info.name">Название</string>
+    <string name="game.info.number">Номер</string>
+    <string name="game.info.price">Цена</string>
+    <string name="game.info.type">Тип</string>
+    <string name="game.info.zone">Зона</string>
 
 
     <string name="user.info">Информация о пользователе</string>
-    <string name="user.info.id"><b>ID</b></string>
-    <string name="user.info.name"><b>Имя</b></string>
-    <string name="user.info.email"><b>Email</b></string>
-    <string name="user.info.team"><b>Команда</b></string>
+    <string name="user.info.id">ID</string>
+    <string name="user.info.name">Имя</string>
+    <string name="user.info.email">Email</string>
+    <string name="user.info.team">Команда</string>
 </resources>
