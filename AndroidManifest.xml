@@ -6,14 +6,21 @@
 
     <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="7" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application  android:name=".CxApplication" android:label="@string/app.id" android:icon="@drawable/ic_launcher">
-        <activity android:name="UserInfo"
-                  android:label="@string/user.info">
+
+        <activity android:name=".GameListActivity" android:label="@string/app.name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".UserInfoActivity" android:label="@string/user.info"/>
+
+
+        <activity android:name=".GameInfoActivity" android:label="@string/game.info"/>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-</manifest> 
+
+</manifest>

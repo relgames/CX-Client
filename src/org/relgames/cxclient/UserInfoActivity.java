@@ -6,8 +6,8 @@ import android.widget.TextView;
 import org.relgames.cxclient.service.CxService;
 import org.relgames.cxclient.service.User;
 
-public class UserInfo extends Activity {
-    private CxService getCxService() {
+public class UserInfoActivity extends Activity {
+    protected CxService getCxService() {
         return ((CxApplication)getApplication()).getCxService();
     }
 

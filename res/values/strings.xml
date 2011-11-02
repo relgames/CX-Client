@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app.id">cxclient</string>
-    <string name="app.name">Клиент для Схватки</string>
+    <string name="app.name">Схватка</string>
+
+    <string name="game.info">Игра</string>
+    <string name="game.info.dateStart"><b>Начало</b></string>
+    <string name="game.info.dateStop"><b>Конец</b></string>
+    <string name="game.info.name"><b>Название</b></string>
+    <string name="game.info.number"><b>Номер</b></string>
+    <string name="game.info.price"><b>Цена</b></string>
+    <string name="game.info.type"><b>Тип</b></string>
+    <string name="game.info.zone"><b>Зона</b></string>
+
+
     <string name="user.info">Информация о пользователе</string>
     <string name="user.info.id"><b>ID</b></string>
     <string name="user.info.name"><b>Имя</b></string>

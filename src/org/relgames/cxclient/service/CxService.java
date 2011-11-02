@@ -9,6 +9,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,10 +26,15 @@ public class CxService {
 
     private static final Map<Class, String> URLS = Collections.unmodifiableMap(new HashMap<Class, String>() {{
         put(User.class, "mvc/user/me");
+        put(GameList.class, "/mvc/games/open");
     }});
 
     public User getUserInfo() throws CxServiceException {
         return getDataFromServer(User.class, null);
+    }
+
+    public List<Game> getGameList() throws CxServiceException {
+        return getDataFromServer(GameList.class, null).games;
     }
 
     private <T> T getDataFromServer(Class<T> clazz, Map<String, String> parameters) {
