@@ -81,4 +81,126 @@ public class ParsingTest {
         assertEquals("Точки", game.type);
         assertEquals("г. Гомель", game.zone);
     }
+
+    @Test
+    public void testStatistics() throws Exception {
+        Persister p = new Persister();
+        Statistics statistics = p.read(Statistics.class, "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
+                "<statistics>\n" +
+                "    <levels>\n" +
+                "        <level>\n" +
+                "            <scores>\n" +
+                "                <score>\n" +
+                "                    <bonusTime>0</bonusTime>\n" +
+                "                    <penaltyTime>0</penaltyTime>\n" +
+                "                    <team>\n" +
+                "                        <id>72</id>\n" +
+                "                        <name>b</name>\n" +
+                "                    </team>\n" +
+                "                    <timePassedLevel>1319812206451</timePassedLevel>\n" +
+                "                    <timeSpentOnLevel>6451</timeSpentOnLevel>\n" +
+                "                    <user>\n" +
+                "                        <id>70</id>\n" +
+                "                        <name>b</name>\n" +
+                "                    </user>\n" +
+                "                </score>\n" +
+                "                <score>\n" +
+                "                    <bonusTime>0</bonusTime>\n" +
+                "                    <penaltyTime>0</penaltyTime>\n" +
+                "                    <team>\n" +
+                "                        <id>3</id>\n" +
+                "                        <name>a</name>\n" +
+                "                    </team>\n" +
+                "                    <timePassedLevel>1319812219543</timePassedLevel>\n" +
+                "                    <timeSpentOnLevel>19543</timeSpentOnLevel>\n" +
+                "                    <user>\n" +
+                "                        <id>1</id>\n" +
+                "                        <name>a</name>\n" +
+                "                    </user>\n" +
+                "                </score>\n" +
+                "            </scores>\n" +
+                "            <name>1</name>\n" +
+                "            <pos>1</pos>\n" +
+                "        </level>\n" +
+                "        <level>\n" +
+                "            <scores>\n" +
+                "                <score>\n" +
+                "                    <bonusTime>0</bonusTime>\n" +
+                "                    <penaltyTime>0</penaltyTime>\n" +
+                "                    <team>\n" +
+                "                        <id>72</id>\n" +
+                "                        <name>b</name>\n" +
+                "                    </team>\n" +
+                "                    <timePassedLevel>1319812211158</timePassedLevel>\n" +
+                "                    <timeSpentOnLevel>4707</timeSpentOnLevel>\n" +
+                "                    <user>\n" +
+                "                        <id>70</id>\n" +
+                "                        <name>b</name>\n" +
+                "                    </user>\n" +
+                "                </score>\n" +
+                "                <score>\n" +
+                "                    <bonusTime>0</bonusTime>\n" +
+                "                    <penaltyTime>0</penaltyTime>\n" +
+                "                    <team>\n" +
+                "                        <id>3</id>\n" +
+                "                        <name>a</name>\n" +
+                "                    </team>\n" +
+                "                    <timePassedLevel>1319812226417</timePassedLevel>\n" +
+                "                    <timeSpentOnLevel>6874</timeSpentOnLevel>\n" +
+                "                    <user>\n" +
+                "                        <id>1</id>\n" +
+                "                        <name>a</name>\n" +
+                "                    </user>\n" +
+                "                </score>\n" +
+                "            </scores>\n" +
+                "            <name>2</name>\n" +
+                "            <pos>2</pos>\n" +
+                "        </level>\n" +
+                "    </levels>\n" +
+                "    <game>\n" +
+                "        <scores>\n" +
+                "            <score>\n" +
+                "                <bonusTime>180000</bonusTime>\n" +
+                "                <level>8</level>\n" +
+                "                <penaltyTime>0</penaltyTime>\n" +
+                "                <team>\n" +
+                "                    <id>72</id>\n" +
+                "                    <name>b</name>\n" +
+                "                </team>\n" +
+                "                <timeSpentOnGame>1319812245104</timeSpentOnGame>\n" +
+                "            </score>\n" +
+                "            <score>\n" +
+                "                <bonusTime>180000</bonusTime>\n" +
+                "                <level>8</level>\n" +
+                "                <penaltyTime>420000</penaltyTime>\n" +
+                "                <team>\n" +
+                "                    <id>3</id>\n" +
+                "                    <name>a</name>\n" +
+                "                </team>\n" +
+                "                <timeSpentOnGame>1319812247863</timeSpentOnGame>\n" +
+                "            </score>\n" +
+                "        </scores>\n" +
+                "        <id>12</id>\n" +
+                "        <name>test4</name>\n" +
+                "    </game>\n" +
+                "</statistics>");
+
+        assertNotNull(statistics);
+    }
+
+    @Test
+    public void testMinimumStatistics() throws Exception {
+        Persister p = new Persister();
+        Statistics statistics = p.read(Statistics.class, "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
+                "<statistics>\n" +
+                "    <levels/>\n" +
+                "    <game>\n" +
+                "        <scores/>\n" +
+                "        <id>45</id>\n" +
+                "        <name>TEST API</name>\n" +
+                "    </game>\n" +
+                "</statistics>");
+
+        assertNotNull(statistics);
+    }
 }

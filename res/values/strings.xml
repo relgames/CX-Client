@@ -24,4 +24,6 @@
     <string name="app.settings.username">Имя пользователя</string>
     <string name="app.settings.password">Пароль</string>
     <string name="app.settings.url">URL</string>
+
+    <string name="statistics">Статистика</string>
 </resources>
