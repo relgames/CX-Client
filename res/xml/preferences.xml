@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="@string/app.settings">
+    <EditTextPreference android:title="@string/app.settings.username" android:inputType="text" android:key="username" android:persistent="true"/>
+    <EditTextPreference android:title="@string/app.settings.password" android:inputType="text" android:password="true" android:key="password" android:persistent="true"/>
+    <EditTextPreference android:title="@string/app.settings.url" android:inputType="textUri" android:key="url" android:persistent="true" android:defaultValue="www.cxgomel.by"/>
+</PreferenceScreen>
