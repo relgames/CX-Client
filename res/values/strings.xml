@@ -25,5 +25,6 @@
     <string name="app.settings.password">Пароль</string>
     <string name="app.settings.url">URL</string>
 
+    <string name="error">Произошла ошибка при подключении</string>
     <string name="statistics">Статистика</string>
 </resources>

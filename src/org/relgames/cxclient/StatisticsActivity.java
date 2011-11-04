@@ -4,10 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import org.relgames.cxclient.service.*;
 import us.gorges.viewaclue.TwoDScrollView;
+
+import static org.relgames.cxclient.Utils.showError;
 
 /**
  * @author Oleg Poleshuk
@@ -28,37 +29,45 @@ public class StatisticsActivity extends Activity {
 
         String gameId = "2859003";
 
-        Statistics statistics = getCxService().getStatistics(gameId);
 
-        LinearLayout table = new LinearLayout(this);
-        table.setOrientation(LinearLayout.HORIZONTAL);
+        try {
+            Statistics statistics = getCxService().getStatistics(gameId);
 
-        for (LevelColumn level : statistics.levels) {
-            LinearLayout column = new LinearLayout(this);
-            column.setOrientation(LinearLayout.VERTICAL);
+            LinearLayout table = new LinearLayout(this);
+            table.setOrientation(LinearLayout.HORIZONTAL);
 
-            TextView header = new TextView(this);
-            header.setText(level.name);
+            for (LevelColumn level : statistics.levels) {
+                LinearLayout column = new LinearLayout(this);
+                column.setOrientation(LinearLayout.VERTICAL);
 
-            column.addView(header, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                TextView header = new TextView(this);
+                header.setText(level.name);
 
-            for (Score score : level.scores) {
-                TextView cell = new TextView(this);
-                cell.setGravity(Gravity.CENTER_HORIZONTAL);
-                cell.setText(score.teamName);
+                column.addView(header, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
-                cell.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                for (Score score : level.scores) {
+                    TextView cell = new TextView(this);
+                    cell.setGravity(Gravity.CENTER_HORIZONTAL);
+                    cell.setText(score.teamName);
 
-                column.addView(cell);
+                    LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    llp.setMargins(15, 15, 15, 15);
+
+                    cell.setLayoutParams(llp);
+
+                    column.addView(cell);
+                }
+
+                table.addView(column);
             }
 
-            table.addView(column);
+
+            TwoDScrollView scrollView = new TwoDScrollView(this);
+            scrollView.addView(table);
+
+            setContentView(scrollView);
+        } catch (Exception e) {
+            showError(e, this);
         }
-
-
-        TwoDScrollView scrollView = new TwoDScrollView(this);
-        scrollView.addView(table);
-
-        setContentView(scrollView);
     }
 }

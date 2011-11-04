@@ -3,7 +3,7 @@ package org.relgames.cxclient.service;
 /**
  * @author Oleg Poleshuk
  */
-public class CxServiceException extends RuntimeException {
+public class CxServiceException extends Exception {
     public CxServiceException() {
         super();
     }
