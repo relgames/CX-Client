@@ -40,17 +40,14 @@ public class StatisticsActivity extends Activity {
             TextView header = new TextView(this);
             header.setText(level.name);
 
-            column.addView(header);
+            column.addView(header, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
             for (Score score : level.scores) {
                 TextView cell = new TextView(this);
                 cell.setGravity(Gravity.CENTER_HORIZONTAL);
                 cell.setText(score.teamName);
 
-                LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                llp.setMargins(15, 15, 15, 15);
-
-                cell.setLayoutParams(llp);
+                cell.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
                 column.addView(cell);
             }
