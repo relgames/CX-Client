@@ -43,6 +43,7 @@ public class CxApplication extends Application implements CxService {
     private static final Map<Class, RemoteService> SERVICES = Collections.unmodifiableMap(new HashMap<Class, RemoteService>() {{
         put(User.class, new RemoteService("mvc/user/me", true));
         put(GameList.class, new RemoteService("mvc/games/open", false));
+        put(Statistics.class, new RemoteService("mvc/statistics/{gameId}", false));
     }});
 
     @Override
@@ -55,11 +56,18 @@ public class CxApplication extends Application implements CxService {
         return getDataFromServer(GameList.class, null).games;
     }
 
+    @Override
+    public Statistics getStatistics(final String gameId) throws CxServiceException {
+        return getDataFromServer(Statistics.class, new HashMap<String, String>(){{
+            put("gameId", gameId);
+        }});
+    }
+
     private <T> T getDataFromServer(Class<T> clazz, Map<String, String> parameters) throws CxServiceException {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         final String username = sp.getString("username", "");
         final String password = sp.getString("password", "");
-        final String siteUrl = sp.getString("url", "");
+        final String siteUrl = sp.getString("url", "www.cxgomel.by");
 
         try {
             StringBuilder url = new StringBuilder();
@@ -75,7 +83,7 @@ public class CxApplication extends Application implements CxService {
                 fullParameters.put("userPassword", password);
             }
 
-            appendParameters(url, fullParameters);
+            applyParameters(url, fullParameters);
 
             Log.d(TAG_SERVICE, url.toString());
             String result = get(url.toString());
@@ -87,20 +95,27 @@ public class CxApplication extends Application implements CxService {
         }
     }
 
-    private void appendParameters(StringBuilder builder, Map<String, String> fullParameters) {
+    private void applyParameters(StringBuilder builder, Map<String, String> fullParameters) {
         if (fullParameters.isEmpty()) {
             return;
         }
 
         boolean first = true;
         for (Map.Entry<String, String> entry : fullParameters.entrySet()) {
-            if (first) {
-                builder.append("?");
-                first = false;
+            String param = "{"+entry.getKey()+"}";
+            int i = builder.indexOf(param);
+            if (i >= 0) {
+                builder.replace(i, i+param.length(), entry.getValue());
             } else {
-                builder.append("&");
+                if (first) {
+                    builder.append("?");
+                    first = false;
+                } else {
+                    builder.append("&");
+                }
+                builder.append(entry.getKey()).append("=").append(URLEncoder.encode(entry.getValue()));
             }
-            builder.append(entry.getKey()).append("=").append(URLEncoder.encode(entry.getValue()));
+
         }
     }
 
@@ -124,8 +139,6 @@ public class CxApplication extends Application implements CxService {
         } finally {
             closeStream(stream);
         }
-
-
     }
 
     private void closeStream(InputStream stream) {

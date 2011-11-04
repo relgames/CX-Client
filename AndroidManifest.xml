@@ -17,6 +17,12 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".StatisticsActivity" android:label="@string/statistics">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".UserInfoActivity" android:label="@string/user.info"/>
 
         <activity android:name=".GameInfoActivity" android:label="@string/game.info"/>

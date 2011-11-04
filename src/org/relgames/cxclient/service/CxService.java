@@ -8,4 +8,5 @@ import java.util.List;
 public interface CxService {
     User getUserInfo() throws CxServiceException;
     List<Game> getGameList() throws CxServiceException;
+    Statistics getStatistics(String gameId) throws CxServiceException;
 }
