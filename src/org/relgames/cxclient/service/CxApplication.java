@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import org.relgames.cxclient.Utils;
+import org.simpleframework.xml.convert.AnnotationStrategy;
 import org.simpleframework.xml.core.Persister;
 
 import java.io.IOException;
@@ -26,7 +28,7 @@ public class CxApplication extends Application implements CxService {
         return this;
     }
 
-    private Persister persister = new Persister();
+    private Persister persister = new Persister(new AnnotationStrategy());
 
     private static final String TAG_SERVICE = "CxService";
 
@@ -42,8 +44,9 @@ public class CxApplication extends Application implements CxService {
 
     private static final Map<Class, RemoteService> SERVICES = Collections.unmodifiableMap(new HashMap<Class, RemoteService>() {{
         put(User.class, new RemoteService("mvc/user/me", true));
-        put(GameList.class, new RemoteService("mvc/games/open", false));
+        put(GameInfoList.class, new RemoteService("mvc/games/open", false));
         put(Statistics.class, new RemoteService("mvc/statistics/{gameId}", false));
+        put(InGame.class, new RemoteService("mvc/ingame/{gameId}", true));
     }});
 
     @Override
@@ -52,8 +55,8 @@ public class CxApplication extends Application implements CxService {
     }
 
     @Override
-    public List<Game> getGameList() throws CxServiceException {
-        return getDataFromServer(GameList.class, null).games;
+    public List<GameInfo> getGameList() throws CxServiceException {
+        return getDataFromServer(GameInfoList.class, null).gameInfos;
     }
 
     @Override
@@ -63,15 +66,24 @@ public class CxApplication extends Application implements CxService {
         }});
     }
 
+    @Override
+    public InGame inGame(final String gameId, final String bonusId, final String key) throws CxServiceException {
+        return getDataFromServer(InGame.class, new HashMap<String, String>(){{
+            put("gameId", gameId);
+            put("bonusId", bonusId);
+            put("key", key);
+        }});
+    }
+
     private <T> T getDataFromServer(Class<T> clazz, Map<String, String> parameters) throws CxServiceException {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         final String username = sp.getString("username", "");
         final String password = sp.getString("password", "");
-        final String siteUrl = sp.getString("url", "www.cxgomel.by");
+        final String siteUrl = Utils.getBaseUrl(this);
 
         try {
             StringBuilder url = new StringBuilder();
-            url.append("http://").append(siteUrl).append("/").append(SERVICES.get(clazz).url);
+            url.append(siteUrl).append("/").append(SERVICES.get(clazz).url);
 
             Map<String, String> fullParameters = new HashMap<String, String>();
             if (parameters != null) {
@@ -102,20 +114,21 @@ public class CxApplication extends Application implements CxService {
 
         boolean first = true;
         for (Map.Entry<String, String> entry : fullParameters.entrySet()) {
-            String param = "{"+entry.getKey()+"}";
-            int i = builder.indexOf(param);
-            if (i >= 0) {
-                builder.replace(i, i+param.length(), entry.getValue());
-            } else {
-                if (first) {
-                    builder.append("?");
-                    first = false;
+            if (entry.getValue()!=null && entry.getValue().trim().length()>0) {
+                String param = "{"+entry.getKey()+"}";
+                int i = builder.indexOf(param);
+                if (i >= 0) {
+                    builder.replace(i, i+param.length(), entry.getValue());
                 } else {
-                    builder.append("&");
+                    if (first) {
+                        builder.append("?");
+                        first = false;
+                    } else {
+                        builder.append("&");
+                    }
+                    builder.append(entry.getKey()).append("=").append(URLEncoder.encode(entry.getValue()));
                 }
-                builder.append(entry.getKey()).append("=").append(URLEncoder.encode(entry.getValue()));
             }
-
         }
     }
 

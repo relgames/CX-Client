@@ -2,9 +2,7 @@ package org.relgames.cxclient;
 
 import android.app.ListActivity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,29 +12,28 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import org.relgames.cxclient.service.CxApplication;
 import org.relgames.cxclient.service.CxService;
-import org.relgames.cxclient.service.Game;
+import org.relgames.cxclient.service.GameInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.relgames.cxclient.Utils.showError;
+import static org.relgames.cxclient.Utils.error;
 
 /**
  * @author Oleg Poleshuk
  */
 public class GameListActivity extends ListActivity {
+    private final String TAG = this.getClass().getSimpleName();
+
     protected CxService getCxService() {
         return ((CxApplication) getApplication()).getCxService();
     }
-
-    private static final String TAG = "GameListActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        String url = sp.getString("url", "");
+        String url = Utils.getBaseUrl(this);
 
         if (url == null || url.trim().length() == 0) {
             showSettings();
@@ -62,11 +59,11 @@ public class GameListActivity extends ListActivity {
 
     private void refresh() {
         try {
-            final List<Game> games = getCxService().getGameList();
+            final List<GameInfo> gameInfos = getCxService().getGameList();
 
-            List<String> gameNames = new ArrayList<String>(games.size());
-            for (Game game : games) {
-                gameNames.add(game.name);
+            List<String> gameNames = new ArrayList<String>(gameInfos.size());
+            for (GameInfo gameInfo : gameInfos) {
+                gameNames.add(gameInfo.name);
             }
 
             setListAdapter(new ArrayAdapter<String>(this, R.layout.game_item, gameNames));
@@ -77,15 +74,15 @@ public class GameListActivity extends ListActivity {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent intent = new Intent(GameListActivity.this, GameInfoActivity.class);
 
-                    Game game = games.get((int) id);
-                    Log.d(TAG, game != null ? game.toString() : "null");
+                    GameInfo gameInfo = gameInfos.get((int) id);
+                    Log.d(TAG, gameInfo != null ? gameInfo.toString() : "null");
 
-                    intent.putExtra("game", game);
+                    intent.putExtra("gameInfo", gameInfo);
                     startActivity(intent);
                 }
             });
         } catch (Exception e) {
-            showError(e, this);
+            error(e, this);
         }
 
     }

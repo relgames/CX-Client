@@ -7,7 +7,7 @@ import org.relgames.cxclient.service.CxApplication;
 import org.relgames.cxclient.service.CxService;
 import org.relgames.cxclient.service.User;
 
-import static org.relgames.cxclient.Utils.showError;
+import static org.relgames.cxclient.Utils.error;
 
 public class UserInfoActivity extends Activity {
     protected CxService getCxService() {
@@ -27,7 +27,7 @@ public class UserInfoActivity extends Activity {
             ((TextView)findViewById(R.id.email)).setText(user.email);
             ((TextView)findViewById(R.id.team)).setText(user.team!=null ? user.team.name : "");
         } catch (Exception e) {
-            showError(e, this);
+            error(e, this);
         }
     }
 

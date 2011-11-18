@@ -12,7 +12,7 @@
     <string name="game.info.type">Тип</string>
     <string name="game.info.zone">Зона</string>
 
-    <string name="user.info">Информация о пользователе</string>
+    <string name="user.info">Юзеринфо</string>
     <string name="user.info.id">ID</string>
     <string name="user.info.name">Имя</string>
     <string name="user.info.email">Email</string>
@@ -27,4 +27,10 @@
 
     <string name="error">Произошла ошибка при подключении</string>
     <string name="statistics">Статистика</string>
+
+    <string name="game.start">Вход в игру</string>
+    <string name="game">Игра</string>
+
+    <string name="refresh">Обновить</string>
+    <string name="settings">Настройки</string>
 </resources>

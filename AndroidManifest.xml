@@ -28,6 +28,8 @@
         <activity android:name=".GameInfoActivity" android:label="@string/game.info"/>
 
         <activity android:name=".SettingsActivity" android:label="@string/app.settings"/>
+
+        <activity android:name=".InGameActivity" android:label="@string/game"/>
     </application>
 
 </manifest>

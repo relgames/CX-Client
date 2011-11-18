@@ -9,7 +9,7 @@ import java.util.List;
  * @author Oleg Poleshuk
  */
 @Root(name = "games")
-class GameList {
+class GameInfoList {
     @ElementList(inline = true)
-    public List<Game> games;
+    public List<GameInfo> gameInfos;
 }

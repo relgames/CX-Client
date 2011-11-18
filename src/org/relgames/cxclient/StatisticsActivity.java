@@ -2,72 +2,63 @@ package org.relgames.cxclient;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.relgames.cxclient.service.*;
-import us.gorges.viewaclue.TwoDScrollView;
-
-import static org.relgames.cxclient.Utils.showError;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.webkit.WebView;
+import org.relgames.cxclient.service.CxApplication;
+import org.relgames.cxclient.service.CxService;
 
 /**
  * @author Oleg Poleshuk
  */
 public class StatisticsActivity extends Activity {
+    private final String TAG = this.getClass().getSimpleName();
+
     protected CxService getCxService() {
         return ((CxApplication) getApplication()).getCxService();
     }
+
+    private WebView webView;
+    private String statisticsUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-/*
         String gameId = getIntent().getStringExtra("gameId");
-        assert gameId != null;
-*/
-
-        String gameId = "2859003";
+        Log.d(TAG, "gameId = " + gameId);
 
 
-        try {
-            Statistics statistics = getCxService().getStatistics(gameId);
+        statisticsUrl = Utils.getBaseUrl(this) + "/stat.jsp?id=" + gameId;
 
-            LinearLayout table = new LinearLayout(this);
-            table.setOrientation(LinearLayout.HORIZONTAL);
+        webView = new WebView(this);
+        webView.getSettings().setJavaScriptEnabled(false);
 
-            for (LevelColumn level : statistics.levels) {
-                LinearLayout column = new LinearLayout(this);
-                column.setOrientation(LinearLayout.VERTICAL);
+        setContentView(webView);
 
-                TextView header = new TextView(this);
-                header.setText(level.name);
+        refresh();
+    }
 
-                column.addView(header, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+    private void refresh() {
+        Log.d(TAG, "Loading " + statisticsUrl);
+        webView.loadUrl(statisticsUrl);
+    }
 
-                for (Score score : level.scores) {
-                    TextView cell = new TextView(this);
-                    cell.setGravity(Gravity.CENTER_HORIZONTAL);
-                    cell.setText(score.teamName);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.ingame_menu, menu);
+        return true;
+    }
 
-                    LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                    llp.setMargins(15, 15, 15, 15);
-
-                    cell.setLayoutParams(llp);
-
-                    column.addView(cell);
-                }
-
-                table.addView(column);
-            }
-
-
-            TwoDScrollView scrollView = new TwoDScrollView(this);
-            scrollView.addView(table);
-
-            setContentView(scrollView);
-        } catch (Exception e) {
-            showError(e, this);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_refresh:
+                refresh();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

@@ -37,4 +37,6 @@
 
     <TextView android:text="@string/game.info.zone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="8dp" android:textStyle="bold"/>
     <TextView android:id="@+id/gameZone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="8dp"/>
+
+    <Button android:id="@+id/startGame" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/game.start" android:onClick="startGame" />
 </LinearLayout>

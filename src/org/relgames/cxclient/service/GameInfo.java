@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author Oleg Poleshuk
  */
 @Root(name = "game")
-public class Game implements Serializable {
+public class GameInfo implements Serializable {
     @Element
     public long dateStart;
 
@@ -36,7 +36,7 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" +
+        return "GameInfo{" +
                 "name='" + name + '\'' +
                 ", id='" + id + '\'' +
                 '}';
